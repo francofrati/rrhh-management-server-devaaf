@@ -1,0 +1,36 @@
+{
+  "name": "rrhh-management-server-devaaf",
+  "version": "1.0.0",
+  "description": "Node Web Server for rrhh-management app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "build": "tsc",
+    "dev": "nodemon index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francofrati/rrhh-management-server-devaaf.git"
+  },
+  "author": "devaaf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francofrati/rrhh-management-server-devaaf/issues"
+  },
+  "homepage": "https://github.com/francofrati/rrhh-management-server-devaaf#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.10.9",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  }
+}
