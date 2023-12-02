@@ -1,13 +1,11 @@
 import express, { Request, Response, Application } from "express";
 
-import dotenv from "dotenv";
-
 import cors from "cors";
 
 import routes from "./routes/index";
 import morgan from "morgan";
 
-const app: Application = express();
+const app: Application = express()
 
 app.use(
   cors({

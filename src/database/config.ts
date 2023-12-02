@@ -12,8 +12,6 @@ const DBConfigs = {
   },
 };
 
-console.log(DBConfigs.supabase_postgres.credentials);
-
 export const DBInstances = {
   supabase_postgres: new Pool(DBConfigs.supabase_postgres.credentials),
 };
