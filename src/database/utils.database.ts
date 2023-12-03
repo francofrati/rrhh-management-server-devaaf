@@ -4,5 +4,7 @@ export const insertInto = async (
   params: string,
   values: string
 ) => {
-  DBInstance.query(`INSERT INTO ${tableName} (${params}) VALUES(${values})`);
+  await DBInstance.query(
+    `INSERT INTO ${tableName} (${params}) VALUES(${values})`
+  );
 };

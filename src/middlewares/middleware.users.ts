@@ -23,6 +23,7 @@ export const validateNewUserData = async (
       national_id,
       nationality,
       phone_number,
+      password,
     } = body;
 
     if (
@@ -32,7 +33,8 @@ export const validateNewUserData = async (
       !last_name ||
       !national_id ||
       !nationality ||
-      !phone_number
+      !phone_number ||
+      !password
     )
       missingParametersError();
 
@@ -45,7 +47,8 @@ export const validateNewUserData = async (
         key !== "national_id" &&
         key !== "nationality" &&
         key !== "phone_number" &&
-        key !== "profile_img"
+        key !== "profile_img" &&
+        key !== "password"
       )
         invalidParametersError();
 
