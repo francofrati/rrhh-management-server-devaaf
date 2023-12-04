@@ -9,6 +9,7 @@ export interface User {
   national_id: string;
   company_id: number;
   profile_img: string;
+  firebase_uid?: string;
 }
 
 export const UsersTableName = "users";
