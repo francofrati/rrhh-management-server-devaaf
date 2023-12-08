@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { Employee } from "../types/employees";
 import { insertInto } from "../database/utils.database";
 import { DBInstances } from "../database/config";
+import { getCompanyEmployees } from "../services/services.companies";
 
 export const addNewEmployeeController = async (
   req: Request<{ companyId: string }, any, Employee & { id: number | string }>,
@@ -33,6 +34,25 @@ export const addNewEmployeeController = async (
     });
   } catch (error: any) {
     return res.status(500).send({
+      message: error.message,
+    });
+  }
+};
+
+export const getEmployeesByCompanyController = async (
+  req: Request<{ companyId: string }, any, { id: string | number }>,
+  res: Response
+) => {
+  try {
+    const { companyId } = req.params;
+    const employees = await getCompanyEmployees(
+      companyId,
+      DBInstances.supabase_postgres
+    );
+
+    return res.send(employees);
+  } catch (error: any) {
+    res.status(500).send({
       message: error.message,
     });
   }
