@@ -12,7 +12,7 @@ import { validateNewEmployeeData } from "../../middlewares/middleware.employees"
 const router = Router();
 
 router.use(
-  "/new/:companyId",
+  "/new/co/:companyId",
   isAuthUser,
   userBelongsToCompany,
   validateNewEmployeeData,
