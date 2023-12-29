@@ -52,3 +52,11 @@ export const getUserById = async (id: number) => {
 
   return user;
 };
+
+export const getHierarchyByUserId = async (id: number, DBInstances: any) => {
+  const { rows } = await DBInstances.query(
+    `select "usersHierarchy".*, "hierarchyLevels".name from "usersHierarchy" left join "hierarchyLevels" on "usersHierarchy".hierarchy_id = "hierarchyLevels".id where "usersHierarchy".user_id = ${id}`
+  );
+
+  return rows[0];
+};
